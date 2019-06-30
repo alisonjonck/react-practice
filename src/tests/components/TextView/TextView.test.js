@@ -1,4 +1,4 @@
-import TextView from '../../components/TextView';
+import TextView from '../../../components/Atoms/TextView';
 
 describe('<TextView /> tests', function () {
     it('renders label', function () {

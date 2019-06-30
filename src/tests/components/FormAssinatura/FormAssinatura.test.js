@@ -1,4 +1,4 @@
-import FormAssinatura from "../../components/FormAssinatura";
+import FormAssinatura from "../../../components/Mols/FormAssinatura";
 
 describe('<FormAssinatura /> tests', function () {
 
