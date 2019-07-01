@@ -1,13 +1,11 @@
 import React from "react";
-import Field from "../../Orgs/Field";
+import InitialInfoStep from "../../Orgs/InitialInfoStep";
+import CriticalInfoStep from "../../Orgs/CriticalInfoStep";
+import SubmitButton from "../../Mols/SubmitButton";
 
 const formStyle = {
     display: "flex",
     flexDirection: "column"
-};
-const submitStyle = {
-    maxWidth: 200,
-    marginTop: 15
 };
 
 const onSubmit = (event) => {
@@ -18,20 +16,14 @@ const onSubmit = (event) => {
 export default () => {
     return (
         <div>
-            {"Um formulário de exemplo"}
+            <h3>{"Cotação Seguro - Minuto 😃"}</h3>
 
             <form style={formStyle} onSubmit={onSubmit}>
-                <Field id="nome" label="Nome" />
+                <InitialInfoStep id="initial-info" title="Informações básicas" />
 
-                <Field id="sobrenome" label="Sobrenome" />
+                <CriticalInfoStep id="critical-info" title="Dados do condutor principal" />
 
-                <Field id="email" label="E-mail" />
-
-                <Field id="endereco" label="Endereço" />
-
-                <Field id="celular" label="Celular" />
-
-                <button type="submit" style={submitStyle}>Enviar</button>
+                <SubmitButton />
             </form>
         </div>
     );
