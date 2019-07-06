@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+import ScrollableAnchor from 'react-scrollable-anchor';
+import setHash from "../../../helpers/setHash";
 
 const formStepStyle = {
     padding: 30,
@@ -13,14 +15,22 @@ const titleStyle = {
     fontSize: 30
 };
 
-export default (props) => {
-    const title = props.title && <label style={titleStyle}>{props.title}</label>;
-    
-    return (
-        <section id={props.id} style={formStepStyle}>
-            {title}
-            
-            {props.children}
-        </section>
-    )
+export default class FormStep extends Component {
+    render() {
+        const props = this.props,
+            title = props.title && <label style={titleStyle}>{props.title}</label>,
+            childrenWithSmoothScroll = props.children.map(child => {
+                return React.cloneElement(child, { onFocus: setHash.bind(null, props.id) });
+            });
+
+        return (
+            <ScrollableAnchor id={props.id}>
+                <div style={formStepStyle}>
+                    {title}
+
+                    {childrenWithSmoothScroll}
+                </div>
+            </ScrollableAnchor>
+        )
+    }
 }

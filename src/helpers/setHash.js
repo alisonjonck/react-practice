@@ -1,10 +1,11 @@
-const setHash = (hash, inputFocus) => {
-    const me = this;
-    
-    location.hash = hash;
+import { goToAnchor, removeHash } from 'react-scrollable-anchor';
 
+const setHash = (hash) => {
+
+    goToAnchor(hash, true);
+    
     setTimeout(() => {
-        document.getElementById(inputFocus).focus();
+        removeHash();
     }, 300);
 };
 

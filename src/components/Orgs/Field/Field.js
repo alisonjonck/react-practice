@@ -2,12 +2,19 @@ import React, { PureComponent } from "react";
 
 const fieldStyle = {
     fontSize: 22,
-    margin: 15,
+    minHeight: 60,
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 };
-let labelStyle = {
+
+const inputStyle = {
+    maxHeight: 45,
+    margin: 5
+};
+
+const labelStyle = {
     padding: 5
 };
 
@@ -21,7 +28,7 @@ export default class Field extends PureComponent {
         return (
             <div style={fieldStyle}>
                 <label htmlFor={props.id} style={labelStyleFormatted}>{props.label}</label>
-                <input type="text" id={props.id} autoFocus={props.autoFocus} onFocus={props.onFocus} />
+                <input style={inputStyle} type="text" id={props.id} autoFocus={props.autoFocus} onFocus={props.onFocus} />
             </div>
         );
     }
