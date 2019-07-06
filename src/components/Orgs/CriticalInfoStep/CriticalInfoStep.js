@@ -10,15 +10,15 @@ export default class CriticalInfoStep extends PureComponent {
 
         return (
             <FormStep id={props.id} title={props.title}>
-                <Field id="fullname" ref={el => me.firstInputRef = el} label="Nome completo do condutor principal" onFocus={setHash.bind(null, props.id, "fullname")} />
+                <Field labelWidth="lg" id="fullname" ref={el => me.firstInputRef = el} label="Nome completo do condutor principal" onFocus={setHash.bind(null, props.id, "fullname")} />
 
-                <Field id="phonerecado" label="Telefone para recado" />
+                <Field labelWidth="lg" id="primaryendereco" label="Endereço principal de pernoite do carro" />
 
-                <Field id="primaryemail" label="E-mail principal" />
+                <Field labelWidth="md" id="phonerecado" label="Telefone para recado" />
 
-                <Field id="primaryendereco" label="Endereço principal de pernoite do carro" />
+                <Field labelWidth="md" id="primaryemail" label="E-mail principal" />
 
-                <Field id="anocarro" label="Ano do modelo do carro" />
+                <Field labelWidth="md" id="anocarro" label="Ano do modelo do carro" />
             </FormStep>
         );
     }

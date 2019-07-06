@@ -5,7 +5,13 @@ import SubmitButton from "../../Mols/SubmitButton";
 
 const formStyle = {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    height: '100%'
+};
+
+const titleStyle = {
+    textAlign: 'center',
+    width: '100%'
 };
 
 const onSubmit = (event) => {
@@ -16,7 +22,7 @@ const onSubmit = (event) => {
 export default () => {
     return (
         <div>
-            <h3>{"Cotação Seguro - Minuto 😃"}</h3>
+            <h1 style={titleStyle}>{"Cotação Seguro - Minuto 😃"}</h1>
 
             <form style={formStyle} onSubmit={onSubmit}>
                 <InitialInfoStep id="initial-info" title="Informações básicas" />
